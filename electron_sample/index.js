@@ -6,20 +6,23 @@ const BrowserWindow = electron.BrowserWindow;
 let mainWindow;
 
 
- // ‘S‚Ä‚ÌƒEƒBƒ“ƒhƒE‚ª•Â‚¶‚½‚çI—¹
- app.on('window-all-closed', function() {
-   if (process.platform != 'darwin') {
-       app.quit();
-         }
-         });
+// ï¿½Sï¿½Ä‚ÌƒEï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½
+app.on('window-all-closed', function() {
+    if (process.platform != 'darwin') {
+        app.quit();
+    }
+});
 
-         // Electron‚Ì‰Šú‰»Š®—¹Œã‚ÉÀs
-         app.on('ready', function() {
-           // ƒƒCƒ“‰æ–Ê‚Ì•\¦BƒEƒBƒ“ƒhƒE‚Ì•A‚‚³‚ğw’è‚Å‚«‚é
-             mainWindow = new BrowserWindow({width: 800, height: 600});
-               mainWindow.loadURL('file://' + __dirname + '/index.html');
-                 // ƒEƒBƒ“ƒhƒE‚ª•Â‚¶‚ç‚ê‚½‚çƒAƒvƒŠ‚àI—¹
-                   mainWindow.on('closed', function() {
-                       mainWindow = null;
-                         });
-                         });
+// Electronï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½s
+app.on('ready', function() {
+    // ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ê‚Ì•\ï¿½ï¿½ï¿½Bï¿½Eï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½Ì•ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½
+    mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600
+    });
+    mainWindow.loadURL('file://' + __dirname + '/index.html');
+    // ï¿½Eï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½Aï¿½vï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½
+    mainWindow.on('closed', function() {
+        mainWindow = null;
+    });
+});
